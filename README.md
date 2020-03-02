@@ -1,1 +1,1 @@
-# tema-12-excercises
+# tema-12-exercises
