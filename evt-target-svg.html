@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Simple rectangle -->
+        <rect id="rectangle" width="100" height="100" fill="blue"/>
+        
+        <!-- Rounded corner rectangle -->
+        <rect id="rectangle2" width="100" height="100"  y="100" fill="grey"/>
+    </svg>
+    <script>
+        let newfill;
+document.querySelector("#rectangle").addEventListener("click", clickRect);
+
+document.querySelector("#rectangle2").addEventListener("click", clickRectGrey);
+
+function clickRect(evt){
+    console.log(evt.target.getAttribute("fill"));
+    console.log(this);
+    newfill = evt.target.getAttribute("fill");
+}
+function clickRectGrey(evt){
+    console.log(newfill);
+    
+    evt.target.style.fill = newfill;
+}
+   
+    </script>
+</body>
+</html>
