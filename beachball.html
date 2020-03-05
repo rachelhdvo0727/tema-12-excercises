@@ -17,7 +17,31 @@
         height: 20vw;
         background-image: url("beachball.svg");
         background-size: 100%;
+        animation: fall-down-bounce 1.8s forwards ease-in-out;
+        /* animation: rolling 1.8s forwards; */
       }
+
+     @keyframes fall-down-bounce {
+        0%{
+         transform: translateY(-10vh);
+        }
+        35%{
+        transform: translateY(80vh);
+        }
+        70%{
+       transform: translateY(66vh);
+        }
+        80%{
+          transform: translateY(80vh);
+        }
+        90%{
+          transform: translateY(75vh);
+        }
+        100%{
+        transform: translateY(80vh);
+        }
+     }
+}
     </style>
   </head>
   <body>
