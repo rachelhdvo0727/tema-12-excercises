@@ -9,11 +9,11 @@
 fill: pink;
 stroke: black;
 stroke-width: 0.8vw;
-animation: rotation 1s 1s forwards;
+/* animation: rotation 1s 1s forwards; */
         }
         .redcircle{
           fill:red;
-          animation: hop 2s 2s forwards;
+          /* animation: hop 2s 2s forwards; */
         }
         .roundsquare{
           fill: black;
@@ -35,17 +35,21 @@ animation: rotation 1s 1s forwards;
             transform: translateY(20%);
           }
         }
+      .square1{
+        clip-path:circle(10%);
+      }  
     </style>
 </head>
 <body>
 
 <svg width="250" height="250" viewBox="0 0 250 250">
   <g>
+    <rect class="square1"x="100" y="10" width="30" height="30" stroke-width="2"></rect>
     <rect class="square"x="20" y="10" width="30" height="30" stroke-width="2"></rect>
     <rect class="roundsquare"x="50" y="50" rx="10" ry="10" width="30" height="30" stroke-width="2"></rect>
     
      <circle class="redcircle" cx="25" cy="75" r="10" stroke-width="5"/>
-     <ellipse cx="65" cy="65" rx="20" ry="5" stroke-width="5"></ellipse>
+     <!-- <ellipse cx="65" cy="65" rx="20" ry="5" stroke-width="5"></ellipse> -->
      <line x1="10" x2="50" y1="120" y2="150" stroke-width="5"/>
      
      <polyline points="60 110 65 120 70 115 75 130 80 125 85 150 90 135 95 150 100 145" stroke="orange" fill="transparent" stroke-width="5"/>

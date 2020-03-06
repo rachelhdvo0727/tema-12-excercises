@@ -17,7 +17,7 @@
         height: 20vw;
         background-image: url("beachball.svg");
         background-size: 100%;
-        animation: fall-down-bounce 1.8s forwards ease-in-out;
+        animation: fall-down-bounce 2s forwards ease-in-out;
         /* animation: rolling 1.8s forwards; */
       }
 
@@ -25,23 +25,38 @@
         0%{
          transform: translateY(-10vh);
         }
-        35%{
+        15%{
         transform: translateY(80vh);
         }
-        70%{
+        20%{
        transform: translateY(66vh);
         }
-        80%{
+        25%{
           transform: translateY(80vh);
         }
-        90%{
+        35%{
           transform: translateY(75vh);
         }
+        45%{
+          /* already on the ground */
+          transform: translateY(80vh) rotate(0deg);
+        }
+        48%{
+          transform:  translateY(80vh) translateX(5vw) rotate(50deg);
+        }
+        55%{
+          transform:  translateY(80vh) translateX(10vw) rotate(70deg);
+        }
+        75%{
+          transform:  translateY(80vh) translateX(15vw) rotate(90deg);
+        }
+        90%{
+          transform:  translateY(80vh) translateX(30vw) rotate(180deg);
+        }
         100%{
-        transform: translateY(80vh);
+          transform: translateY(80vh) translateX(70vw) rotate(360deg);   
         }
      }
-}
     </style>
   </head>
   <body>
