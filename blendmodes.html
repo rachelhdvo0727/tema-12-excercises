@@ -1,57 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="blendmodes.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="blendmodes.css" />
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            box-sizing: border-box;
-        }
-        .container{
-            height: 100%;
-            width: 100% ;  
-            background-repeat: no-repeat;
-            /* background-color: royalblue;
-            background-blend-mode: lighten; */
-        }
-    .color1{
-    background-color: #690e71;
-    top: 0;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: lighten;
-
-}
-.color2{
-    top: 0;
-    background-color: #57cda2;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: multiply;
-}
-        .box{
-            position: absolute;
-            top: 0;
-            height: 20vw;
-            width: 20vw;
-            left: 10vw;
-            background-color: yellow;
-            mix-blend-mode: overlay;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="blurred-adventure-calm-clouds-414171.jpg" alt="landscape"> 
-        <div class="color1"></div>
-        <div class="color2"></div>
-    <div class="box"></div>
+  </head>
+  <body>
+    <!-- Duotone -->
+    <div class="duotone container">
+      <img src="blurred-adventure-calm-clouds-414171.jpg" alt="landscape" />
+      <div class="color1"></div>
+      <div class="color2"></div>
     </div>
-   
-</body>
+
+    <!-- Multiply -->
+    <div class="multiply container">
+      <img src="blurred-adventure-calm-clouds-414171.jpg" alt="landscape" />
+      <div class="box1"></div>
+    </div>
+
+    <!-- Gradient -->
+    <div class="gradient container">
+      <img src="blurred-adventure-calm-clouds-414171.jpg" alt="landscape" />
+      <div class="box2"></div>
+    </div>
+    <!-- Knockout text -->
+    <div class="knockout container">
+      <img src="blurred-adventure-calm-clouds-414171.jpg" alt="landscape" />
+      <div class="box3"></div>
+      <h1 class="text">HALLØJSA</h1>
+    </div>
+  </body>
 </html>

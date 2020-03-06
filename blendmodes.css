@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+/*---- DUOTONE ----*/
+.duotone img {
+  position: absolute;
+  top: 2vw;
+  width: 50%;
+  height: 20%;
+}
+.color1 {
+  background-color: #57cda2;
+  top: 2vw;
+  position: absolute;
+  width: 50%;
+  height: 20%;
+  mix-blend-mode: multiply;
+}
+.color2 {
+  top: 2vw;
+  background-color: #690e71;
+  position: absolute;
+  width: 50%;
+  height: 20%;
+  mix-blend-mode: lighten;
+}
+
+/*---- MULTIPLY ----*/
+.multiply img {
+  position: absolute;
+  top: 27vw;
+  width: 50%;
+  height: 20%;
+}
+.box1 {
+  position: absolute;
+  top: 30vw;
+  height: 15vw;
+  width: 15vw;
+  left: 5vw;
+  background-color: red;
+  mix-blend-mode: multiply;
+}
+
+/*---- GRADIENTS ----*/
+.gradient img {
+  position: absolute;
+  top: 52vw;
+  width: 50%;
+  height: 20%;
+}
+.box2 {
+  position: absolute;
+  top: 52vw;
+  width: 50%;
+  height: 20%;
+  background: rgb(226, 246, 4);
+  background: linear-gradient(
+    119deg,
+    rgba(226, 246, 4, 1) 0%,
+    rgba(60, 9, 121, 1) 77%
+  );
+  mix-blend-mode: soft-light;
+}
+
+/*---- KNOCKOUT TEXT ----*/
+.knockout img {
+  position: absolute;
+  top: 78vw;
+  width: 50%;
+  height: 20%;
+}
+.text {
+  font-family: monospace;
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding-top: 1vw;
+  position: absolute;
+  top: 85vw;
+  left: 15vw;
+  width: 20%;
+  height: 5%;
+  mix-blend-mode: multiply;
+}
+.box3 {
+  position: absolute;
+  top: 78vw;
+  width: 50%;
+  height: 20%;
+  background-color: rgba(121, 9, 117, 1);
+  /* background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 6%,
+    rgba(162, 84, 159, 1) 31%,
+    rgba(121, 9, 117, 1) 82%
+  ); */
+  mix-blend-mode: color-dodge;
+}
