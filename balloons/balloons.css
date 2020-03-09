@@ -5,11 +5,32 @@
 }
 
 .rise {
-  animation: rise 15s ease-in infinite;
+  animation: rise 15s cubic-bezier(0.3, 1.2, 0.8, 1.2) infinite;
 }
 
 @keyframes rise {
-  to {
-    y: -1000;
+  0% {
+    transform: translateX(30px) translateY(1000px);
+  }
+  20% {
+    transform: translateX(20px) translateY(800px);
+  }
+  30% {
+    transform: translateX(10px) translateY(700px);
+  }
+  40% {
+    transform: translateX(30px) translateY(500px);
+  }
+  50% {
+    transform: translateX(-5px) translateY(-400px);
+  }
+  60% {
+    transform: translateX(-10px) translateY(-500px);
+  }
+  80% {
+    transform: translateX(-20px) translateY(-700px);
+  }
+  100% {
+    transform: translateX(-30px) translateY(-1000px);
   }
 }
