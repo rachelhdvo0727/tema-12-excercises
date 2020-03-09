@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .circle {
+        stroke-width: 4;
+        stroke: black;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <svg viewBox="0 0 640 640">
+      <g id="circles"></g>
+    </svg>
+
+    <svg id="template">
+      <circle cx="100" cy="100" r="50"></circle>
+    </svg>
+    <script>
+      "use strict";
+
+      window.addEventListener("DOMContentLoaded", init);
+
+      function init() {
+        console.log("init");
+        for (let i = 0; i < 40; i++) {
+          createCircle();
+        }
+      }
+
+      function createCircle() {
+        let circle = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "circle"
+        );
+        let x = randomPos();
+        let y = randomPos();
+
+        let template = document.querySelector("svg#template");
+        const clone = template.cloneNode(true);
+        circle = clone.querySelector("circle");
+
+        circle.classList.add("circle");
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", 50);
+
+        circle.style.fill = randomColor();
+        document.querySelector("#circles").append(clone);
+      }
+
+      function randomPos() {
+        return Math.random() * 640;
+      }
+
+      function randomColor() {
+        return `rgb(${Math.random() * 256}, ${Math.random() *
+          256}, ${Math.random() * 256})`;
+      }
+    </script>
+  </body>
+</html>
