@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .circle {
+        stroke-width: 4;
+        stroke: black;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <svg viewBox="0 0 640 640">
+      <g id="circles"></g>
+    </svg>
+
+    <script>
+      "use strict";
+
+      window.addEventListener("DOMContentLoaded", init);
+
+      function init() {
+        console.log("init");
+        for (let i = 0; i < 40; i++) {
+          createCircle();
+        }
+      }
+
+      function createCircle() {
+        let circle = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "circle"
+        );
+        circle.classList.add("circle");
+        let x = randomPos();
+        let y = randomPos();
+
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", 50);
+
+        circle.style.fill = randomColor();
+        document.querySelector("#circles").appendChild(circle);
+      }
+
+      function randomPos() {
+        console.log("randomPos");
+        return Math.random() * 640;
+      }
+
+      function randomColor() {
+        console.log("randomColor");
+        return `rgb(${Math.random() * 256}, ${Math.random() *
+          256}, ${Math.random() * 256})`;
+      }
+    </script>
+  </body>
+</html>
