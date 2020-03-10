@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --nav-height: 3vh;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main {
+        display: grid;
+      }
+
+      nav {
+        height: var(--nav-height);
+      }
+      #scrollinfo {
+        height: 3vh;
+        background-color: red;
+        width: 100%;
+        transform: translate(calc(-100% + var(--ratio) * 100%), 0);
+      }
+      .container {
+        height: calc(100vh - var(--nav-height));
+        overflow: scroll;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        perspective: 2px;
+      }
+
+      h1 {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 25vw;
+      }
+
+      #section_1 {
+        background-color: lightblue;
+        height: 25vh;
+        overflow: scroll;
+        overscroll-behavior: contain;
+        /* scroll-snap-align: start end; */
+        /* scroll-snap-type: y mandatory; */
+      }
+
+      #section_2 {
+        background-color: purple;
+        /* scroll-snap-align: start end; */
+      }
+
+      #section_3 {
+        background-color: yellowgreen;
+        /* scroll-snap-align: start end; */
+      }
+
+      #section_4 {
+        background-color: violet;
+        /* scroll-snap-align: start end; */
+      }
+
+      #section_5 {
+        background-color: burlywood;
+        /* scroll-snap-align: start end; */
+      }
+
+      #slower {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 36px;
+        color: yellow;
+        position: absolute;
+        transform: translateZ(-1px) scale(1.5);
+      }
+
+      #faster {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 36px;
+        color: yellow;
+        position: absolute;
+        transform: translateZ(1px) translateX(400px) scale(0.5);
+        /* transform: translateZ(1px) scale(0.5); */
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <nav>
+        <a href="#section_1">Section One</a>
+        <a href="#section_2">Section Two</a>
+        <a href="#section_3">Section Three</a>
+        <a href="#section_4">Section Four</a>
+        <a href="#section_5">Section Five</a>
+      </nav>
+      <div id="scrollinfo">Progress</div>
+      <div class="container">
+        <section id="section_1">
+          <h1>Section One</h1>
+        </section>
+        <section id="section_2">
+          <h1>Section Two</h1>
+        </section>
+        <div id="slower">Slower</div>
+        <div id="faster">Faster</div>
+        <section id="section_3">
+          <h1>Section Three</h1>
+        </section>
+        <section id="section_4">
+          <h1>Section Four</h1>
+        </section>
+        <section id="section_5">
+          <h1>Section Five</h1>
+        </section>
+      </div>
+    </main>
+    <script>
+      "use strict";
+
+      window.addEventListener("DOMContentLoaded", start);
+      const cnt = document.querySelector(".container");
+      const status = document.querySelector("#scrollinfo");
+      let ratio;
+
+      function start() {
+        cnt.addEventListener("scroll", scrolling);
+      }
+      function scrolling() {
+        console.log("scrolling");
+        let scrTop = cnt.scrollTop;
+        let scrHeight = cnt.scrollHeight;
+        let cltHeight = cnt.clientHeight;
+
+        //ratio = (scrTop / (scrHeight - cltHeight)) * 100;
+        ratio = scrTop / (scrHeight - cltHeight);
+        console.log(ratio);
+
+        //status.style.width = ratio + "%";
+        status.style.setProperty("--ratio", ratio);
+      }
+    </script>
+  </body>
+</html>
