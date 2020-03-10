@@ -10,9 +10,11 @@
         box-sizing: border-box;
       }
       :root {
-        --nav-height: 3vh;
+        --nav-height: 5vh;
       }
-
+      body {
+        overscroll-behavior: none;
+      }
       main {
         display: grid;
       }
@@ -23,6 +25,8 @@
         height: calc(100vh - var(--nav-height));
         overflow: scroll;
         scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        perspective: 2px;
       }
       h1 {
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -31,20 +35,44 @@
       }
       #section_1 {
         background-color: lightblue;
+        height: 25vh;
         overflow: scroll;
-        height: 15vh;
+        overscroll-behavior: contain;
+        /* scroll-snap-align: start end; */
+        /* scroll-snap-type: y mandatory; */
       }
       #section_2 {
         background-color: purple;
+        /* scroll-snap-align: start end; */
       }
       #section_3 {
         background-color: yellowgreen;
+        /* scroll-snap-align: start end; */
       }
       #section_4 {
         background-color: violet;
+        /* scroll-snap-align: start end; */
       }
       #section_5 {
         background-color: burlywood;
+        /* scroll-snap-align: start end; */
+      }
+      #slower {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 36px;
+        color: yellow;
+        position: absolute;
+        transform: translateZ(-1px) scale(1.5);
+      }
+      #faster {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 36px;
+        color: yellow;
+        position: absolute;
+        transform: translateZ(1px) translateX(400px) scale(0.5);
+        /* transform: translateZ(1px) scale(0.5); */
       }
     </style>
   </head>
@@ -65,6 +93,8 @@
         <section id="section_2">
           <h1>Section Two</h1>
         </section>
+        <div id="slower">Slower</div>
+        <div id="faster">Faster</div>
         <section id="section_3">
           <h1>Section Three</h1>
         </section>
