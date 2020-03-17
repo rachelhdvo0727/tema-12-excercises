@@ -14,7 +14,7 @@
         height: 20vw;
         background-image: url(beachball.svg);
         background-size: 100%;
-        animation: move 2s linear infinite;
+        /* animation: move 2s linear infinite; */
       }
       /* x frames per second: framerate determines how smooth the animation is  */
       /* speed is how fast */
@@ -32,6 +32,28 @@
   <body>
     <div id="ball"></div>
 
-    <script></script>
+    <script>
+      "use strict";
+      const ball = document.querySelector("#ball");
+      let pos = 0;
+      //speed = 500px per second
+      //framerate = 100 frames per second
+      //move at = speed / framerate
+
+      const speed = 500; //px per sec.
+      const framerate = 100; //frames per sec.
+      function move() {
+        pos += speed / framerate; //speed
+
+        //repetition
+        if (pos > 500) {
+          pos = 0;
+        }
+        ball.style.transform = `translateX(${pos}px)`;
+
+        setTimeout(move, 1000 / framerate); //set framerate
+      }
+      move();
+    </script>
   </body>
 </html>
