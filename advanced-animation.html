@@ -36,22 +36,31 @@
       "use strict";
       const ball = document.querySelector("#ball");
       let pos = 0;
+
       //speed = 500px per second
       //framerate = 100 frames per second
       //move at = speed / framerate
-
       const speed = 500; //px per sec.
       const framerate = 100; //frames per sec.
-      function move() {
-        pos += speed / framerate; //speed
 
+      //1000ms / 60 frames = 16,66667
+      //framerate = 1000 / 16,66667 = 59,99999 = 60
+      let last;
+
+      function move() {
+        const now = performance.now();
+        const difference = now - last || 0; //use last if last exists or use 0 instead
+
+        last = now;
+        console.log(difference);
+        pos += speed / (1000 / difference); //speed
         //repetition
         if (pos > 500) {
           pos = 0;
         }
         ball.style.transform = `translateX(${pos}px)`;
 
-        setTimeout(move, 1000 / framerate); //set framerate
+        requestAnimationFrame(move); //set framerate
       }
       move();
     </script>
