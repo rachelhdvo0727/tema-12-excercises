@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #ball {
+        width: 20vw;
+        height: 20vw;
+        background-image: url(beachball.svg);
+        background-size: 100%;
+        animation: move 2s linear infinite;
+      }
+      /* x frames per second: framerate determines how smooth the animation is  */
+      /* speed is how fast */
+      @keyframes move {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(500px);
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="ball"></div>
+
+    <script></script>
+  </body>
+</html>
